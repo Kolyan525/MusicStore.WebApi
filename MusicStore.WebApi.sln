@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.WebApi", "MusicStore.WebApi\MusicStore.WebApi.csproj", "{ED593DFF-570C-4301-A839-81297A6277C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicStore.Core", "MusicStore.Core\MusicStore.Core.csproj", "{DAE3483C-70D7-4079-99B5-01AC69772129}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED593DFF-570C-4301-A839-81297A6277C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED593DFF-570C-4301-A839-81297A6277C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED593DFF-570C-4301-A839-81297A6277C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED593DFF-570C-4301-A839-81297A6277C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAE3483C-70D7-4079-99B5-01AC69772129}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAE3483C-70D7-4079-99B5-01AC69772129}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAE3483C-70D7-4079-99B5-01AC69772129}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAE3483C-70D7-4079-99B5-01AC69772129}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA23D315-9323-49AC-A423-4709B0FC4D58}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,39 @@
+﻿{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:29571",
+      "sslPort": 44343
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "launchUrl": "song",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DATABASE_NAME": "MusicStoreDB",
+        "SONGS_COLLECTION_NAME": "Songs",
+        "GENRES_COLLECTION_NAME": "Genres",
+        "ARTISTS_COLLECTION_NAME": "Artists"
+      }
+    },
+    "MusicStore.WebApi": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "launchUrl": "song",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DATABASE_NAME": "MusicStoreDB",
+        "SONGS_COLLECTION_NAME": "Songs",
+        "GENRES_COLLECTION_NAME": "Genres",
+        "ARTISTS_COLLECTION_NAME": "Artists"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000",
+      "dotnetRunMessages": "true",
+    }
+  }
+}
