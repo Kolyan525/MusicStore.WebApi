@@ -1,5 +1,7 @@
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -38,7 +40,12 @@ namespace MusicStore.WebApi
                 //config.AddAWSProvider(Configuration.GetAWSLoggingConfigSection());
                 config.SetMinimumLevel(LogLevel.Debug);
             });
-            services.AddControllers();
+            services.AddControllers().AddFluentValidation(fv =>
+            {
+                fv.RegisterValidatorsFromAssemblyContaining<SongValidator>();
+                fv.RegisterValidatorsFromAssemblyContaining<ArtistValidator>();
+                fv.RegisterValidatorsFromAssemblyContaining<GenreValidator>();
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "MusicStore.WebApi", Version = "v1" });
@@ -54,6 +61,9 @@ namespace MusicStore.WebApi
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "MusicStore.WebApi v1"));
             }
+            else {
+                app.UseHsts();
+            }
 
             app.UseCors(opt => opt.WithOrigins("https://localhost:3000", "https://localhost:3001").AllowAnyHeader().AllowAnyMethod());
 
@@ -61,12 +71,19 @@ namespace MusicStore.WebApi
 
             app.UseRouting();
 
+            app.UseStaticFiles();
+
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            //app.Run(async (context) =>
+            //{
+            //    await context.Response.WriteAsync("Could Not Find Anything");
+            //});
         }
     }
 }

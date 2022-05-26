@@ -7,6 +7,7 @@ using Serilog.Events;
 using Serilog.Formatting.Json;
 using Serilog.Sinks.SystemConsole.Themes;
 using System;
+using ILogger = Serilog.ILogger;
 
 namespace MusicStore.WebApi
 {

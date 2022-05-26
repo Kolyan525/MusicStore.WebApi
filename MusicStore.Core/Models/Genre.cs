@@ -1,4 +1,5 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using FluentValidation;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace MusicStore.Core
 {
@@ -9,5 +10,14 @@ namespace MusicStore.Core
         public string Id { get; set; }
 
         public string Name { get; set; }
+    }
+
+    public class GenreValidator : AbstractValidator<Genre>
+    {
+        public GenreValidator()
+        {
+            RuleFor(x => x.Id).NotNull();
+            RuleFor(x => x.Name).Length(1, 20);
+        }
     }
 }
